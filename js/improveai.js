@@ -1,8 +1,10 @@
 
-var ImproveAI = function(apikey, user_id) {
+var ImproveAI = function(apikey, user_id, version) {
 
   this.apikey = apikey;
   this.user_id = user_id;
+  this.base_url = "https://api.improve.ai/"
+  this.version = version || "v1"
 
   var async = function (options)
   {
@@ -66,7 +68,7 @@ var ImproveAI = function(apikey, user_id) {
         //   request.setRequestHeader("x-api-key", this.apikey);
           // request.setRequestHeader("Content-Type", "application/json");
         // },
-        url: "https://api.improve.ai/v1/choose",
+        url: this.base_url + version + "/choose",
         // url: 'http://requestb.in/vqnqdgvq',
         headers: {
             "x-api-key" : this.apikey,

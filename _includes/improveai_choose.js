@@ -13,7 +13,7 @@ improveai.choose("headline", headline_choices, purchase_funnel, function(data, s
     console.log(data);
     headline = JSON.parse(data).properties.headline;
   } else {
-    headline = "Error Loading POST /v1/choose";
+    headline = "Error Loading POST " + improveai.version + "/choose";
   }
 
   document.getElementById("headline").innerHTML = headline;
