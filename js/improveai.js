@@ -8,15 +8,15 @@ var ImproveAI = function(apikey, user_id, version) {
 
   var async = function (options)
   {
-      var theUrl = options.url;
-      var method = options.method || 'GET';
-      var headers = options.headers || {};
-      var data = options.data;
-      var success = options.success;
-      var error = options.error;
+      let theUrl = options.url;
+      let method = options.method || 'GET';
+      let headers = options.headers || {};
+      let data = options.data;
+      let success = options.success;
+      let error = options.error;
 
       // /*
-      var xmlHttp = new XMLHttpRequest();
+      let xmlHttp = new XMLHttpRequest();
       xmlHttp.onreadystatechange = function() {
           if (xmlHttp.readyState == 4)
             if (xmlHttp.status >= 200 && xmlHttp.status < 400)
@@ -24,7 +24,7 @@ var ImproveAI = function(apikey, user_id, version) {
             else error(xmlHttp.responseText, xmlHttp.status);
       };
       xmlHttp.open(method, theUrl, true); // true for asynchronous
-      for (var key in headers) {
+      for (let key in headers) {
         xmlHttp.setRequestHeader(key, headers[key]);
       }
       xmlHttp.send(data);
@@ -42,7 +42,7 @@ var ImproveAI = function(apikey, user_id, version) {
       //*/
   };
 
-  var log = function(message) {
+  let log = function(message) {
     console.log(message);
   };
 
